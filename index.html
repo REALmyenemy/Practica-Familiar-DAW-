@@ -1,0 +1,124 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Familiar</title>
+		<script>
+			function Persona()
+			{
+				this.nombre="";
+				this.edad="";
+
+
+				this.Familia=function()
+				{
+					this.padre="";
+					this.madre="";
+					this.Hijos=function()
+					{
+						this.nomH1;
+						this.nomH2;
+						this.nomH3;
+					}
+					this.casas=["Sevilla","Huelva"];
+				}
+			}
+
+			var persona1=new Persona();
+			var persona2=new Persona();
+			
+			persona1.nombre="Juan";
+			persona1.edad=20;
+
+			persona1.familia1= new persona1.Familia()
+			persona1.familia1.hijos=new persona1.familia1.Hijos();
+			persona1.familia1.padre="Pedro";
+			persona1.familia1.madre="María";
+			
+			persona1.familia1.hijos.nomH1="H1MP";
+			persona1.familia1.hijos.nomH2="H2 MP";
+			
+
+
+			persona2.nombre="lolo"
+			persona2.edad=40;
+			
+			persona2.familia1= new persona2.Familia()
+			persona2.familia1.hijos=new persona2.familia1.Hijos();
+			persona2.familia1.padre="Paco";
+			persona2.familia1.madre="lola";
+			
+			persona2.familia1.hijos.nomH1="H1pl";
+			persona2.familia1.hijos.nomH2="H2Pl";
+			
+			persona2.familia2= new persona2.Familia()
+			persona2.familia2.hijos=new persona2.familia2.Hijos();
+			persona2.familia2.padre="Paco";
+			persona2.familia2.madre="lol";
+			
+			persona2.familia2.hijos.nomH1="";
+			persona2.familia2.hijos.nomH2="";
+
+			function writefamilia(familia)
+			{
+				document.write("<br /><span>Familia</span><div> Padre: "+familia.padre+"<br /> Madre: "+familia.madre+"<br /> Hijos: <br /><div>");
+				if (familia.hijos.nomH1!=undefined)
+				{
+					document.write(familia.hijos.nomH1+"<br />")
+					if (familia.hijos.nomH2!=undefined)
+					{
+						document.write(familia.hijos.nomH2+"<br />")
+						if (familia.hijos.nomH13=undefined)
+							document.write(familia.hijos.nomH3+"<br />")
+					}
+				}
+				
+				document.write("</div><span class='p'> Casas: ")
+				for (var i=0;i<familia.casas.length;i++)
+				{
+					document.write(familia.casas[i]+" ");
+				}
+				document.write("</span>");
+				document.write("</div>");
+			}
+			
+			
+			function writePersona(persona)
+			{
+				document.write("<div>nom: "+persona.nombre+"<br />edad: "+persona.edad+"<hr />");
+				writefamilia(persona.familia1);
+				if (persona.familia2!=undefined)
+				writefamilia(persona.familia2);
+				document.write("</div>");
+			}
+			writePersona(persona1);
+			writePersona(persona2);
+
+		</script>
+		<style>
+			div
+			{
+				border:solid black 1px;
+				margin:2%;
+				padding:2%;
+				float:left;
+				width:80%;
+			}
+			div div
+			{
+				float:right;
+				width:68%;
+			}
+			div div div
+			{
+				float:left;
+			}
+			span{clear:both;border:none;float:left;}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+	</html>
